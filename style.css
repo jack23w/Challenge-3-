@@ -1,80 +1,61 @@
-:root {
-    --primary: navy;
-    --bg: #222831;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Monserrat', sans-serif;
-}
-
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: var(--bg);
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
 }
 
-h2 {
-    font-size: 2em;
-    color: white;
-    text-align: center;
+a {
+  color: #dfe6ea;
+  text-decoration: none;
 }
 
-.input-box {
-    position: relative;
-    width: 310px;
-    margin: 30px 0;
-    border-bottom: 2px solid #fff;
+a:hover {
+  color: #dce8ed;
+  text-decoration: none;
 }
 
-.input-box label {
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    font-size: 1em;
-    color: white;
-    pointer-events: none;
-    transition: .3s;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Jost", sans-serif;
 }
 
-.input-box input:focus~label,
-.input-box input:valid~label {
-    top: -5px;
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #37517e;
 }
 
-.input-box input {
-    width: 100%;
-    height: 50px;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 1em;
-    color: white;
-    padding: 0 35px 0 5px;
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #37517e;
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1s linear infinite;
 }
 
-.input-box .icon {
-    position: absolute;
-    right: 8px;
-    color: white;
-    font-size: 1.2rem;
-    line-height: 57px;
-}
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
 
-button {
-    width: 100%;
-    height: 40px;
-    background: white;
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    cursor: pointer;
-    font-size: 1em;
-    color: black;
-    font-weight: 500;
+  100% {
+    transform: rotate(360deg);
+  }
 }
